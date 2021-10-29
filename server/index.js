@@ -33,13 +33,15 @@ app.get('/query-test', (req, res) => {
     }
 })
 
-let foods = []
 
 app.post('/food', (req, res) => {
+    let foods = []
     const { newFood } = req.body
     foods.push(newFood)
     res.status(200).send(foods)
 })
+
+// console.log(foods);
 
 app.listen(port, () => {
   console.log(`Lab server listening at http://localhost:${port}`)
